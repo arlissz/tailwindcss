@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+  <div  
+      class="w-[100%] h-[500px] py-[50px]"
+      style="
+        background-image: url(https://www.mining-indonesia.com/wp-content/uploads/2021/02/bghead-2023-sm.webp);">
+
+      <div class="w-[76%] ml-[185px]">
+        <div class="flex">
+          <img class="header-img" src="	https://s40065.pcdn.co/wp-content/uploads/2021/04/MiningIndonesiaLogoWhite-300x97.png" alt="Image Pamerindo Indonesia"/>
+          <div class="text-white ml-[50px]">
+            <p class="text-2xl font-bold">11 - 14 SEPTEMBER 2024</p>
+            <p>Jakarta International Expo, Jakarta - Indonesia</p>
+          </div>
+        </div>
+        
+        <div class="border-t-[0.5px] border-white my-8">
+          <ul class="flex text-white font-bold p-3">
+            <li><a class="mr-[30px]" href="index.html">HOME</a></li>
+            <li><a class="mr-[30px]" href="biodata.html">BIODATA</a></li>
+            <li><a class="mr-[30px]" href="contact_us.html">CONTACT US</a></li>
+            <li><a class="mr-[30px]" href="galeri.html">GALERY</a></li>
+            <li><a class="mr-[30px]" href="https://unai.edu/" target="_blank">UNAI</a></li>
+            <li><a class="mr-[30px]" href="https://fti.unai.edu/" target="_blank">FTI UNAI</a></li>
+          </ul>
+        </div>
+
+  <div class="containercontact">
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post" class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+        <label for="nama" class="block">Full Name:</label>
+        <input type="text" id="nama" name="nama" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-orange-500">
+
+        <label for="email" class="block mt-4">Email:</label>
+        <input type="email" id="email" name="email" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-orange-500">
+
+        <label for="username" class="block mt-4">Username:</label>
+        <input type="text" id="username" name="username" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-orange-500">
+
+        <label for="password" class="block mt-4">Password:</label>
+        <input type="password" id="password" name="password" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-orange-500">
+
+       <label class="block mt-4">Gender:</label>
+        <div class="flex mt-2">
+            <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki" class="mr-2">
+            <label for="male">Male</label>
+            <input type="radio" id="famale" name="jenis_kelamin" value="famale" class="ml-8 mr-2">
+            <label for="perempuan">Female</label>
+        </div>
+
+        <label for="agama" class="block mt-4">Religion:</label>
+        <select id="agama" name="agama" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring focus:border-orange-500">
+            <option value="">Choose</option>
+            <option value="Islam">Christian</option>
+            <option value="Islam">Katholik</option>
+            <option value="Kristen">Moslem</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+            <option value="Lainnya">Others</option>
+        </select>
+
+        <label for="alamat" class="block mt-4">Address:</label>
+        <textarea id="alamat" name="alamat" class="w-full border rounded-md py-2 px-3 h-24 resize-none focus:outline-none focus:ring focus:border-orange-500"></textarea>
+
+        <label class="block mt-4">Hobbies:</label>
+        <div class="flex mt-2">
+            <label for="reading" class="mr-4">Football</label>
+            <input type="checkbox" id="Football" name="hobi[]" value="Football" class="mr-6">
+            <label for="sport" class="mr-4">BasketBall</label>
+            <input type="checkbox" id="BasketBall" name="hobi[]" value="BasketBall" class="mr-6">
+            <label for="music" class="mr-4">Music</label>
+            <input type="checkbox" id="music" name="hobi[]" value="Music">
+            <label for="music" class="mr-4">Billiyard</label>
+            <input type="checkbox" id="Billiyard" name="hobi[]" value="Billiyard">
+        </div>
+
+        <button type="submit" name="submit" value="Simpan" class="mt-6 bg-orange-500 text-white py-2 px-4 rounded-md hover:bg-orange-600 transition duration-300">Save</button>
+    </form> 
+</div>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting
+  
+      // Get form values
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const religion = document.getElementById('religion').value;
+      const address = document.getElementById('address').value.trim();
+  
+      // Basic validation: Check if required fields are empty
+      if (!fullName || !email || !username || !password || !gender || !religion || !address) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+  
+      // If all fields are filled, you can proceed with form submission or other actions
+      // For now, let's log the form data
+      console.log('Full Name:', fullName);
+      console.log('Email:', email);
+      console.log('Username:', username);
+      console.log('Password:', password);
+      console.log('Gender:', gender.value);
+      console.log('Religion:', religion);
+      console.log('Address:', address);
+  
+      // Here you can add code to submit the form via AJAX or perform other actions
+    });
+  </script>
+
+</body>
+</html>
